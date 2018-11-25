@@ -1,1 +1,3 @@
-# revisionControl
+# 版本控制操作说明
+
+由于时间仓促，文件操作简易版说明见 ![版本控制操作说明](https://levin12.github.io/revisionControl/)， 更新中...
