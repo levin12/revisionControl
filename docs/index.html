@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>版本控制笔记</title>
+  <meta name="description" content="版本控制笔记">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="版本控制笔记" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="版本控制笔记" />
+  
+  
+  
+
+
+
+<meta name="date" content="2018-11-25">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">版本控制笔记</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="#section-1"><i class="fa fa-check"></i><b>1</b> 版本控制系统简介</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="#section-1.1"><i class="fa fa-check"></i><b>1.1</b> 准备工作</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="#section-1.2"><i class="fa fa-check"></i><b>1.2</b> 操作流程</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank"></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">版本控制笔记</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">版本控制笔记</h1>
+<h4 class="date"><em>2018-11-25</em></h4>
+</div>
+<div id="section-1" class="section level1">
+<h1><span class="header-section-number">第 1 章</span> 版本控制系统简介</h1>
+<p>目前比较常用的平台有 github、 gitlab、bitbucket. 下面说说这个平台的优缺点。</p>
+<ul>
+<li><p>github：参与人数多，项目可被多人进行参与维护，但是文件大小不能超过100Mb，存储库可以托管信息1Gb。GitHub的服务不是完全免费的。如设置项目为私人项目，需要付费。</p></li>
+<li><p>gitlab：功能基本上和 github 相差不大，允许免费设置仓库权限。然而界面相对较慢，存在存储库常见的技术问题。</p></li>
+<li><p>BitBucket：服务也非常类似于GitHub，对于小团队免费获得无限数量的免费存储库，但是系统不稳定。</p></li>
+</ul>
+<div id="section-1.1" class="section level2">
+<h2><span class="header-section-number">1.1</span> 准备工作</h2>
+<ul>
+<li><p>注册账号</p>
+<p>自行登录个人喜好的平台进行进行注册。</p></li>
+<li><p>安装软件</p></li>
+</ul>
+<p>若喜欢以图像化界面软件进行代码的提交、克隆项目，建议使用 SourceTree 软件。若喜欢命令行的形式提交、克隆项目， windows 小伙伴需要下载 git 软件（mac 和 linux 系统自带， 无需安装）。</p>
+<p>第三方软件SourceTree 安装步骤如下：</p>
+<p>1) 登录 <a href="https://www.sourcetreeapp.com/">SourceTree</a>官网， 下载适应自己电脑系统合适的版本;</p>
+<p>2) 双击 SourcetreeSetup.exe 软件，进行安装。</p>
+<p>3) 打开 Sourcetree 安装的文件夹 ，在此文件下新建 accounts.json 文件。文件的内容如下：</p>
+<pre><code>[
+  {
+    &quot;$id&quot;: &quot;1&quot;,
+    &quot;$type&quot;: &quot;SourceTree.Api.Host.Identity.Model.IdentityAccount, SourceTree.Api.Host.Identity&quot;,
+    &quot;Authenticate&quot;: true,
+    &quot;HostInstance&quot;: {
+      &quot;$id&quot;: &quot;2&quot;,
+      &quot;$type&quot;: &quot;SourceTree.Host.Atlassianaccount.AtlassianAccountInstance, SourceTree.Host.AtlassianAccount&quot;,
+      &quot;Host&quot;: {
+        &quot;$id&quot;: &quot;3&quot;,
+        &quot;$type&quot;: &quot;SourceTree.Host.Atlassianaccount.AtlassianAccountHost, SourceTree.Host.AtlassianAccount&quot;,
+        &quot;Id&quot;: &quot;atlassian account&quot;
+      },
+      &quot;BaseUrl&quot;: &quot;https://id.atlassian.com/&quot;
+    },
+    &quot;Credentials&quot;: {
+      &quot;$id&quot;: &quot;4&quot;,
+      &quot;$type&quot;: &quot;SourceTree.Model.BasicAuthCredentials, SourceTree.Api.Account&quot;,
+      &quot;Username&quot;: &quot;&quot;,
+      &quot;Email&quot;: null
+    },
+    &quot;IsDefault&quot;: false
+  }
+]</code></pre>
+</div>
+<div id="section-1.2" class="section level2">
+<h2><span class="header-section-number">1.2</span> 操作流程</h2>
+<ul>
+<li><p>命令行</p></li>
+<li><p>SourceTree</p>
+<p>1) 登录版本控制平台，这里以 github 为例，访问 <a href="https://github.com/login" class="uri">https://github.com/login</a> github 登录主面，键入账号和密码，点击登录按钮。如下图：</p>
+<div class="figure">
+<img src="image/githublogin.png" />
+
+</div></li>
+</ul>
+<p>2) 在远程服务端建里新的 git 项目，点击 <strong>+</strong> 旁边的下拉按钮，选择 <strong>New repository</strong> 如下图：</p>
+<div class="figure">
+<img src="image/createGit.png" />
+
+</div>
+<p>3) 在进行了步骤2操作，出现下面的界面，按照图中的步骤进行操作。</p>
+<div class="figure">
+<img src="image/createRepository.png" />
+
+</div>
+<p>4) 在进行了步骤3操作，出现下图界面，找到项目的git地址。</p>
+<div class="figure">
+<img src="image/gitAddress.png" />
+
+</div>
+<p>5) 打开 SourceTree 软件，从Git服务器上拉取项目。如下图：</p>
+<div class="figure">
+<img src="image/cloneGit.png" />
+
+</div>
+<p>6) 往本地git 项目中添加文件。示例添加 HelloWorld.java .如下：</p>
+<div class="figure">
+<img src="image/localFile.png" />
+
+</div>
+<p>7) 在一般大型项目中，一般 master 分支存放的生产环境的文件，开发过程中产生的文件，一般存放在 dev 分支，待开发分支的代码测试无误，方可推送至 master 分支，下面新建 dev 分支，如下图：</p>
+<div class="figure">
+<img src="image/createBranch.png" />
+
+</div>
+<p>7) 提交文件， 先从本地提交到缓冲区， 然后从缓冲区推送到远程服务端。如下图：</p>
+<div class="figure">
+<img src="image/stage.png" />
+
+</div>
+<div class="figure">
+<img src="image/push.png" />
+
+</div>
+<p>推送之后，可以在github页面进行查看。</p>
+<div class="figure">
+<img src="image/pushRes.png" />
+
+</div>
+<div class="figure">
+<img src="image/pushRes2.png" />
+
+</div>
+<p>7) 合并分支， 发布正式版本。如下图：</p>
+<div class="figure">
+<img src="image/merge.png" />
+
+</div>
+<div class="figure">
+<img src="image/merger2.png" />
+
+</div>
+<p>8) 最后结果如下图：</p>
+<div class="figure">
+<img src="image/result.png" />
+
+</div>
+<p>看起来很复杂，用命令行来说就是三板斧：</p>
+<pre><code>添加缓冲区： git add file_name
+提交： git commit -m&quot;commit description&quot;
+推送至远程服务端: git push 
+</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["docs.pdf", "docs.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
